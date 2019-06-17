@@ -24,17 +24,20 @@ public class JsonUtils {
             for(int i = 0; i < alsoKnownAs.length(); i++){
                 alsoKnownAsArray.add(alsoKnownAs.getString(i));
             }
+            List<String> ingredints = new ArrayList<>();
+            JSONArray jsonArrayIngredients = jsonObject.getJSONArray("ingredients");
+            for(int i = 0; i < jsonArrayIngredients.length(); i++){
+                ingredints.add(jsonArrayIngredients.getString(i));
+            }
             String placeOrigin = jsonObject.getString("placeOfOrigin");
             String imageUrl = jsonObject.getString("image");
             String description = jsonObject.getString("description");
             sandwich.setDescription(description);
+            sandwich.setIngredients(ingredints);
             sandwich.setImage(imageUrl);
             sandwich.setPlaceOfOrigin(placeOrigin);
             sandwich.setAlsoKnownAs(alsoKnownAsArray);
             sandwich.setMainName(mainName);
-
-
-
         }catch(JSONException e){
             e.printStackTrace();
         }
