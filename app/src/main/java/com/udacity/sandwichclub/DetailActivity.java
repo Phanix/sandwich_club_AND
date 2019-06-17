@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -57,6 +58,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
+        TextView tvAlsoKnownAs = findViewById(R.id.also_known_tv);
 
     }
 }

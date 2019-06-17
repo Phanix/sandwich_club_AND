@@ -24,6 +24,12 @@ public class JsonUtils {
             for(int i = 0; i < alsoKnownAs.length(); i++){
                 alsoKnownAsArray.add(alsoKnownAs.getString(i));
             }
+            String placeOrigin = jsonObject.getString("placeOfOrigin");
+            String imageUrl = jsonObject.getString("image");
+            String description = jsonObject.getString("description");
+            sandwich.setDescription(description);
+            sandwich.setImage(imageUrl);
+            sandwich.setPlaceOfOrigin(placeOrigin);
             sandwich.setAlsoKnownAs(alsoKnownAsArray);
             sandwich.setMainName(mainName);
 
